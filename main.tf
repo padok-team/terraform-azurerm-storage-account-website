@@ -1,6 +1,15 @@
-# Here you can reference 2 type of terraform objects :
-# 1. Ressources from you provider of choice
-# 2. Modules from official repositories which include modules from the following github organizations
-#     - AWS: https://github.com/terraform-aws-modules
-#     - GCP: https://github.com/terraform-google-modules
-#     - Azure: https://github.com/Azure
+resource "azurerm_storage_account" "this" {
+  name                     = var.name
+  resource_group_name      = var.resource_group_name
+  location                 = var.resource_group_location
+  account_kind             = "StorageV2"
+  account_tier             = "Standard"
+  account_replication_type = var.account_replication_type
+
+
+  static_website {
+    index_document = var.index_document
+  }
+
+  tags = var.tags
+}
