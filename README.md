@@ -12,9 +12,9 @@ Terraform module which creates **Storage Account for website** resources on **AZ
 module "storage_account_website" {
   source = "git@github.com:padok-team/terraform-azurerm-storage-account-website.git?ref=v0.0.1"
 
-  name                    = "padokexamplewebsite${random_string.random.result}"
-  resource_group_name     = module.rg_example.this.name
-  resource_group_location = module.rg_example.this.location
+  name                    = "my-website-name"
+  resource_group_name     = "my-resource-group-name"
+  resource_group_location = "West Europe"
 
   tags = {
     padok = "example"

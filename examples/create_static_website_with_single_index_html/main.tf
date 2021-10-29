@@ -1,25 +1,24 @@
-# This example creates a Storage account
+# This example creates a Storage account for serving a static website.
 
+terraform {
+  required_version = ">= 0.13.0"
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = ">=2.82.0"
+    }
+  }
+}
 provider "azurerm" {
+  # Whilst version is optional, we /strongly recommend/ using it to pin the version of the Provider being used
   features {}
 }
 
-provider "random" {
-
-}
-
-resource "random_string" "random" {
-  length  = 5
-  special = false
-  number  = true
-  upper   = false
-}
-
-module "rg_example" {
+module "resource_group_example" {
   source = "git@github.com:padok-team/terraform-azurerm-resource-group.git?ref=v0.0.2"
 
 
-  name     = "storage_account_example_${random_string.random.result}"
+  name     = "resource_group_example"
   location = "West Europe"
 
   tags = {
@@ -31,9 +30,9 @@ module "rg_example" {
 module "storage_account_website" {
   source = "git@github.com:padok-team/terraform-azurerm-storage-account-website.git?ref=v0.0.1"
 
-  name                    = "padokexamplewebsite${random_string.random.result}"
-  resource_group_name     = module.rg_example.this.name
-  resource_group_location = module.rg_example.this.location
+  name                    = "padokexamplewebsite"
+  resource_group_name     = module.resource_group_example.this.name
+  resource_group_location = module.resource_group_example.this.location
 
   tags = {
     padok = "example"
