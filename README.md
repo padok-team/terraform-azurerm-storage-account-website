@@ -4,8 +4,8 @@ Terraform module which creates **Storage Account for website** resources on **AZ
 
 ## User Stories for this module
 
-- AAOps, I want to create a storage account for website.
-- AAOps, I have a website with an availbility of 99.99%
+- AAOps, I can create a storage account for a website.
+- AAOps, I can create a website with an availability of 99.99%
 
 ## Usage
 
@@ -26,7 +26,7 @@ module "storage_account_website" {
 ## Examples
 
 - [Create a static website with an index.html](examples/create_static_website_with_single_index_html)
-- [Create a static website with single index html ultra available](examples/create_static_website_with_single_index_html_ultra_available)
+- [Create a static website with a single index.html and 99.99% availability](examples/create_static_website_with_single_index_html_ultra_available)
 
 <!-- BEGIN_TF_DOCS -->
 ## Modules
