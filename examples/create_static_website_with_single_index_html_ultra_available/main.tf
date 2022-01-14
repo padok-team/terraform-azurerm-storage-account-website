@@ -28,11 +28,11 @@ module "resource_group_example" {
 }
 
 module "storage_account_website" {
-  source = "git@github.com:padok-team/terraform-azurerm-storage-account-website.git?ref=v0.0.1"
+  source = "git@github.com:padok-team/terraform-azurerm-storage-account-website.git?ref=v1.0.0"
 
-  name                    = "padokexamplewebsite"
-  resource_group_name     = module.resource_group_example.this.name
-  resource_group_location = module.resource_group_example.this.location
+  name                     = "padokexamplewebsite"
+  resource_group_name      = module.resource_group_example.this.name
+  resource_group_location  = module.resource_group_example.this.location
   account_replication_type = "GZRS"
   tags = {
     padok = "example"
