@@ -26,7 +26,7 @@ module "storage_account_website" {
 ## Examples
 
 - [Create a static website with an index.html](examples/create_static_website_with_single_index_html)
-- [create static website with single index html ultra available](examples/create_static_website_with_single_index_html_ultra_available)
+- [Create a static website with single index html ultra available](examples/create_static_website_with_single_index_html_ultra_available)
 
 <!-- BEGIN_TF_DOCS -->
 ## Modules
