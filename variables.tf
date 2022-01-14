@@ -28,7 +28,7 @@ variable "account_replication_type" {
 }
 
 variable "index_document" {
-  description = "Index Document"
+  description = "Index Document - i.e. index.html, default.html, etc."
   type        = string
   default     = "index.html"
 }

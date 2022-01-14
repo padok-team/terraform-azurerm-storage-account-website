@@ -41,7 +41,7 @@ No modules.
 | <a name="input_resource_group_location"></a> [resource\_group\_location](#input\_resource\_group\_location) | Resource Group Location | `string` | n/a | yes |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Resource Group Name | `string` | n/a | yes |
 | <a name="input_account_replication_type"></a> [account\_replication\_type](#input\_account\_replication\_type) | Storage account replication type - i.e. LRS, GRS, RAGRS, ZRS, GZRS, RAGZRS. https://docs.microsoft.com/azure/storage/common/storage-redundancy | `string` | `"GRS"` | no |
-| <a name="input_index_document"></a> [index\_document](#input\_index\_document) | Index Document | `string` | `"index.html"` | no |
+| <a name="input_index_document"></a> [index\_document](#input\_index\_document) | Index Document - i.e. index.html, default.html, etc. | `string` | `"index.html"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags | `map(string)` | <pre>{<br>  "terraform": "true"<br>}</pre> | no |
 
 ## Outputs
