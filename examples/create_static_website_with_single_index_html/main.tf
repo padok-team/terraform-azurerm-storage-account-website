@@ -14,10 +14,7 @@ provider "azurerm" {
   features {}
 }
 
-module "resource_group_example" {
-  source = "git@github.com:padok-team/terraform-azurerm-resource-group.git?ref=v1.0.0"
-
-
+resource "azurerm_resource_group" "this" {
   name     = "resource_group_example"
   location = "West Europe"
 
@@ -31,8 +28,8 @@ module "storage_account_website" {
   source = "git@github.com:padok-team/terraform-azurerm-storage-account-website.git?ref=v1.0.0"
 
   name                    = "padokexamplewebsite"
-  resource_group_name     = module.resource_group_example.this.name
-  resource_group_location = module.resource_group_example.this.location
+  resource_group_name     = azurerm_resource_group.this.name
+  resource_group_location = azurerm_resource_group.this.location
 
   tags = {
     padok = "example"
