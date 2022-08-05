@@ -1,0 +1,17 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: terraform-azurerm-storage-account-website
+  description: N/A # TODO: fill description
+  tags:
+    - "terraform"
+    - "azure"
+  annotations:
+    github.com/project-slug: padok-team/terraform-azurerm-storage-account-website
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: module
+  system: terraform
+  owner: library-azure
+  lifecycle: experimental # TODO: define module state
